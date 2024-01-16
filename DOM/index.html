@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .special {
+      border: 10px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="characters">
+    <div class="ilbuni a">Ilbuni A</div>
+    <div class="ilbuni b">Ilbuni B</div>
+    <div class="ilbuni c">Ilbuni C</div>
+  </div>
+  <div class="ilbuni d">Ilbuni D</div>
+</body>
+
+</html>
+<script>
+  const ilbuniGroup = document.querySelectorAll('.ilbuni')
+  console.log(ilbuniGroup);
+
+  const char = document.querySelector('.characters');
+  char.setAttribute('data-id', 123)
+  console.log(char.getAttribute('data-id'))
+  console.log(char.dataset)
+  char.dataset.id = 777;
+  char.dataset.title = '안녕!';
+
+  console.log(char.dataset.title)
+
+</script>
