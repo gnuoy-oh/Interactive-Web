@@ -39,3 +39,5 @@
 - element.classList.remove('ilbuni'); (class 기존 것을 제거한다.)
 
 - element.classList.toggle('ilbuni'); (class를 add/remove를 왔다갔다한다.)
+
+- element.addEventListener('click', function(){ //event })

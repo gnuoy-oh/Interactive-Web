@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Interactive Web</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .characters {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: #fff000;
+    }
+
+    .ilbuni {
+      width: 100px;
+      cursor: pointer;
+    }
+
+    .characters .ilbuni {
+      display: inline-block;
+    }
+
+    .special {
+      border: 10px dashed red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="characters">
+    <div class="ilbuni a">
+      <img src="images/ilbuni_0.png" alt="일분이">
+    </div>
+    <div class="ilbuni b">
+      <img src="images/ilbuni_1.png" alt="일분이">
+    </div>
+    <div class="ilbuni c">
+      <img src="images/ilbuni_2.png" alt="일분이">
+    </div>
+    <div class="ilbuni d">
+      <img src="images/ilbuni_3.png" alt="일분이">
+    </div>
+  </div>
+
+  <script>
+    {
+      // EVENT 1
+      const ilbuni = document.querySelector('.ilbuni:nth-child(1)')
+
+      const toggleIlbuniHandler = () => {
+        ilbuni.classList.toggle('special')
+      }
+
+      ilbuni.addEventListener('click', toggleIlbuniHandler)
+    }
+
+
+    // EVENT 2
+    // load > 돔트리 이후, 모든 리소스까지 완벽히 끝난 후 발생하는 이벤트
+    // DOMContentLoaded > 돔트리까지만 형성되고 나면 바로 발생하는 이벤트
+    // 즉, DOMContentLoaded 이벤트가 load 이벤트보다 앞서 발생한다. 로딩 측면에서 DOMContentLoaded가 우위에 있음
+    window.addEventListener('DOMContentLoaded', function () {
+      const ilbuni3 = document.querySelector('.ilbuni.c')
+
+      const clickIlbuniHandler = () => {
+        ilbuni3.classList.toggle('special');
+      }
+
+
+      ilbuni3.addEventListener('click', clickIlbuniHandler)
+    })
+  </script>
+</body>
+
+</html>
